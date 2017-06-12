@@ -99,16 +99,6 @@ int main()
 			//Add Cookies	
 			if (kDown & KEY_X){
 				cookies = cookies + buildingData[6];
-			} 
-			
-			if (kDown & KEY_A & (cursor == 1)) {
-				screen = 1;
-				cursor = 0;
-				consoleClear();
-			} else if (kDown & KEY_A & (cursor == 2)) {
-				screen = 2;
-				cursor = 0;
-				consoleClear();
 			}
 						
 			if (kDown & KEY_DOWN) {
@@ -129,6 +119,16 @@ int main()
 			} else if (cursor == 2) {
 				printf("\x1b[12;2H  Shop\e[K\n");
 				printf("\x1b[13;2H> Options\e[K\n");
+			}
+			
+			if (kDown & KEY_A & (cursor == 1)) {
+				screen = 1;
+				cursor = 0;
+				consoleClear();
+			} else if (kDown & KEY_A & (cursor == 2)) {
+				screen = 2;
+				cursor = 0;
+				consoleClear();
 			}
 		
 		} else if (screen == 1) { //Select Shop
